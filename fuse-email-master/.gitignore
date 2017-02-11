@@ -1,0 +1,5 @@
+/node_modules
+npm-debug.log
+/examples/example.json
+/examples/test.js
+/test/reports
