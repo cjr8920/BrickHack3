@@ -21,8 +21,6 @@ ngrok.connect(port, function(err, url) {
 	   fuse.setupServer(port, function(err, server) {
 		 fuse.setupEndpoint(server);
 		 server.post('/create', function(req, res){
-			 
-			 console.log(req.body);
 			 sendLetter(req.body.letter, function(err, letter){
 				 var responder = fuse.responder();
 				 responder.send({
