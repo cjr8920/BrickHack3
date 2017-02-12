@@ -1,0 +1,25 @@
+{
+  "name": "brickhack3",
+  "version": "1.0.0",
+  "description": "repo for brickhack3 code",
+  "main": "test.js",
+  "dependencies": {
+    "fuse-email": "^0.0.1-alpha.2",
+    "lob-node": "^3.9.0",
+    "ngrok": "^2.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connoryork/BrickHack3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connoryork/BrickHack3/issues"
+  },
+  "homepage": "https://github.com/connoryork/BrickHack3#readme"
+}

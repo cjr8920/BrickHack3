@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email->Amish</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<center class = "top">
+	<h1>Email-to-Amish</h1>
+</center>
+
+
+<form class="form-horizontal" name="addressForm">
+	<center><h3>Please put in the recipient's information.</h3></center>
+	<br/>
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Full Name</label>
+    <div class="col-sm-4">
+      <input name="name1" class="form-control" id="name1" placeholder="FirstName LastName">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Address</label>
+    <div class="col-sm-4">
+      <input name="address" class="form-control" id="address" placeholder="### Street Name">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">City</label>
+    <div class="col-sm-4">
+      <input name="city" class="form-control" id="city" placeholder="CityName">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">State</label>
+    <div class="col-sm-4">
+      <select id="state">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="DC">District Of Columbia</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+      </select>       
+    </div>
+  </div>
+
+<div class="form-group">
+    <label class="col-sm-4 control-label">Zip Code</label>
+    <div class="col-sm-4">
+      <input name="zip" class="form-control" id="zip" placeholder="######">
+    </div>
+  </div>
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+<center><h3>Please put in your (the sender's) information</h3></center>
+
+<div class="form-group">
+    <label class="col-sm-4 control-label">Full Name</label>
+    <div class="col-sm-4">
+      <input name="name2" class="form-control" id="name2" placeholder="FirstName LastName">
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">Email</label>
+    <div class="col-sm-4">
+      <input name="email" class="form-control" id="email" placeholder="your@email.com">
+    </div>
+  </div>
+
+<div class="form-group">
+
+  <label for="comment" class="col-sm-4 control-label">Message</label>
+  <div class="col-sm-4">
+  <textarea name="comment" class="form-control" rows="5" id="comment"></textarea>
+  </div>
+</div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-4">
+      <button type="submit" class="btn btn-default">Send Message</button>
+    </div>
+  </div>
+</form>
+
+
+<br/>
+<br/>
+
+  <script type="text/javascript">
+    function validate(){
+         if( document.addressForm.name1.value == "" ){
+            alert( "Please provide your recipient's name!" );
+            document.addressForm.name1.focus() ;
+            return false;
+         }
+
+         if( document.addressForm.address.value == "" ){
+            alert( "Please provide your address!" );
+            document.addressForm.address.focus() ;
+            return false;
+         }
+
+         if( document.addressForm.city.value == "" ){
+            alert( "Please provide your city!" );
+            document.addressForm.city.focus() ;
+            return false;
+         }
+         
+         if( document.addressForm.zip.value == "" ||
+         isNaN( document.addressForm.zip.value ) ||
+         document.addressForm.zip.value.length != 5 )
+         {
+            alert( "Please provide a zip code in the format #####." );
+            document.addressForm.zip.focus() ;
+            return false;
+         }
+
+        if( document.addressForm.name2.value == "" ){
+            alert( "Please provide your name!" );
+            document.addressForm.name2.focus() ;
+            return false;
+         }
+
+         if( document.addressForm.email.value == "" )
+         {
+            alert( "Please provide your Email!" );
+            document.addressForm.email.focus() ;
+            return false;
+         }
+         if( document.addressForm.comment.value == "" ){
+            alert( "Please provide a message body!" );
+            document.addressForm.comment.focus() ;
+            return false;
+         }
+
+         return true;
+      }
+
+    function email() {
+      var toName = document.getElementById("name1").value;
+      var toAddress = document.getElementById("address").value;
+      var toCity = document.getElementById("city").value;
+      var toState = document.getElementById("state").value;
+      var toZip = document.getElementById("zip").value;
+      var fromName = document.getElementById("name2").value;
+      var fromEmail = document.getElementById("email").value;
+      var fromMail = document.getElementById("comment").value;
+      var address = ['678 Fake Street', 'Monticello', 'NY', '12701'];
+
+      var body = {
+        letter: {
+          to: {
+           name: toName,
+           address_line1: toAddress,
+           address_city: toCity,
+           address_state: toState,
+           address_zip: toZip,
+         },
+         from: {
+           name: fromName,
+           address_line1: address[0],
+           address_city: address[1],
+           address_state: address[2],
+           address_zip: address[3],
+         },
+         file: '<html>' + fromMail.replace(/(?:\r\n|\r|\n)/g, '<br />') + '</html>',
+         color: true
+        },
+        email: fromEmail
+      };
+
+      $.ajax({
+        method: "POST",
+        url: "http://localhost:3000/create",
+        data: body
+      })
+        .done(function( msg ) {
+          alert(msg);
+      });
+    };
+    $("form").submit(function(e){
+      e.preventDefault();
+
+      if (validate() !== false)
+        email();
+    });
+  </script>
+</body>
+</html>
